@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tinder Stove — Leave-No-Trace Fire, Reimagined</title>
+    <meta
+      name="description"
+      content="Tinder Stove is a sustainable bamboo rocket stove reinforced with pineapple skin weave, packed in a rope mesh basket with homemade fire starters and kindle."
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ember: '#d97706',
+              moss: '#355e3b',
+              pine: '#1f3d2b',
+              clay: '#8b5e3c',
+              bark: '#5a432d',
+              sand: '#efe4d1',
+              leaf: '#7a9b76'
+            },
+            boxShadow: {
+              glow: '0 20px 60px rgba(217, 119, 6, 0.16)'
+            }
+          }
+        }
+      };
+    </script>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background:
+          radial-gradient(circle at top, rgba(217, 119, 6, 0.16), transparent 30%),
+          linear-gradient(180deg, #f7f2e8 0%, #efe4d1 100%);
+      }
+    </style>
+  </head>
+  <body class="text-pine antialiased">
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const Badge = ({ children }) => (
+        <span className="inline-flex items-center rounded-full border border-amber-700/20 bg-white/80 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-clay shadow-sm backdrop-blur">
+          {children}
+        </span>
+      );
+
+      const SectionTitle = ({ eyebrow, title, body }) => (
+        <div className="max-w-2xl">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-ember">{eyebrow}</p>
+          <h2 className="text-3xl font-bold tracking-tight text-pine sm:text-4xl">{title}</h2>
+          <p className="mt-4 text-base leading-7 text-pine/75 sm:text-lg">{body}</p>
+        </div>
+      );
+
+      const kitItems = [
+        {
+          name: 'Bamboo rocket stove',
+          desc: 'A lightweight, self-feeding stove body shaped for efficient airflow and a strong natural burn.'
+        },
+        {
+          name: 'Pineapple skin weave reinforcement',
+          desc: 'Natural woven structure adds strength while keeping the build compostable and low impact.'
+        },
+        {
+          name: 'Rope mesh carry basket',
+          desc: 'A simple breathable basket that makes the kit easy to carry, gift, or stash for the next trip.'
+        },
+        {
+          name: 'Homemade fire starters + kindle',
+          desc: 'Everything you need to get a flame going fast, with low fuss and no plastic-heavy packaging.'
+        }
+      ];
+
+      const steps = [
+        {
+          title: 'Pack light',
+          text: 'Take the basket anywhere — campsite, backyard, beach cookout, or emergency stash.'
+        },
+        {
+          title: 'Light and feed',
+          text: 'Use the included starters and kindle. The rocket-style form draws air naturally and keeps the burn focused.'
+        },
+        {
+          title: 'Leave less behind',
+          text: 'The stove is designed to do its job, then disappear with dignity — a fire tool that eventually consumes itself.'
+        }
+      ];
+
+      const App = () => {
+        return (
+          <div>
+            <header className="mx-auto max-w-7xl px-6 pb-12 pt-6 sm:px-8 lg:px-10">
+              <nav className="flex items-center justify-between rounded-full border border-white/70 bg-white/60 px-5 py-3 shadow-sm backdrop-blur">
+                <div>
+                  <p className="text-lg font-bold tracking-tight text-pine">Tinder Stove</p>
+                  <p className="text-xs uppercase tracking-[0.2em] text-pine/50">Natural fire kit</p>
+                </div>
+                <a
+                  href="#preorder"
+                  className="rounded-full bg-pine px-4 py-2 text-sm font-semibold text-white transition hover:bg-moss"
+                >
+                  Pre-order
+                </a>
+              </nav>
+            </header>
+
+            <main>
+              <section className="mx-auto grid max-w-7xl gap-12 px-6 pb-20 sm:px-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:px-10">
+                <div>
+                  <Badge>Sustainable heat for the wild</Badge>
+                  <h1 className="mt-6 max-w-3xl text-5xl font-black tracking-tight text-pine sm:text-6xl lg:text-7xl">
+                    Leave-no-trace fire,
+                    <span className="block text-ember">woven from the land.</span>
+                  </h1>
+                  <p className="mt-6 max-w-2xl text-lg leading-8 text-pine/75 sm:text-xl">
+                    Tinder Stove is a bamboo rocket stove reinforced with pineapple skin weave — sold as a ready-to-carry kit with a rope mesh basket, homemade fire starters, and kindle. It burns clean, feeds itself, and eventually returns to ash instead of trash.
+                  </p>
+
+                  <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+                    <a
+                      href="#preorder"
+                      className="inline-flex items-center justify-center rounded-full bg-ember px-6 py-3 text-base font-semibold text-white shadow-glow transition hover:bg-amber-700"
+                    >
+                      Reserve your first batch
+                    </a>
+                    <a
+                      href="#how-it-works"
+                      className="inline-flex items-center justify-center rounded-full border border-pine/15 bg-white/70 px-6 py-3 text-base font-semibold text-pine transition hover:bg-white"
+                    >
+                      See how it works
+                    </a>
+                  </div>
+
+                  <div className="mt-10 grid gap-4 sm:grid-cols-3">
+                    {[
+                      ['Self-feeding', 'Rocket-style airflow keeps flames focused.'],
+                      ['Plastic-light kit', 'Natural materials, minimal waste, easy carry.'],
+                      ['Eventually consumable', 'Designed to serve its purpose, then disappear.']
+                    ].map(([title, text]) => (
+                      <div key={title} className="rounded-3xl border border-white/70 bg-white/65 p-5 shadow-sm backdrop-blur">
+                        <h3 className="font-semibold text-pine">{title}</h3>
+                        <p className="mt-2 text-sm leading-6 text-pine/70">{text}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="relative">
+                  <div className="absolute -left-8 top-8 h-32 w-32 rounded-full bg-amber-300/30 blur-3xl"></div>
+                  <div className="absolute -right-8 bottom-6 h-40 w-40 rounded-full bg-green-900/15 blur-3xl"></div>
+                  <div className="relative overflow-hidden rounded-[2rem] border border-white/70 bg-gradient-to-br from-pine via-moss to-bark p-7 text-white shadow-2xl">
+                    <div className="rounded-[1.5rem] border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+                      <p className="text-sm uppercase tracking-[0.25em] text-sand/70">Field-ready concept</p>
+                      <div className="mt-8 flex items-end justify-between gap-6">
+                        <div>
+                          <p className="text-4xl font-black sm:text-5xl">100%</p>
+                          <p className="mt-2 max-w-xs text-sm leading-6 text-sand/80">
+                            natural-material-forward design built for simple cooking heat without lugging metal hardware.
+                          </p>
+                        </div>
+                        <div className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold">
+                          Eco-conscious kit
+                        </div>
+                      </div>
+
+                      <div className="mt-8 grid gap-3">
+                        {[
+                          'Bamboo body',
+                          'Pineapple skin weave reinforcement',
+                          'Rope mesh basket included',
+                          'Fire starters + kindle packed in'
+                        ].map((item) => (
+                          <div key={item} className="flex items-center gap-3 rounded-2xl bg-white/10 px-4 py-3">
+                            <div className="h-2.5 w-2.5 rounded-full bg-amber-300"></div>
+                            <span className="text-sm text-sand">{item}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section id="how-it-works" className="mx-auto max-w-7xl px-6 py-20 sm:px-8 lg:px-10">
+                <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+                  <SectionTitle
+                    eyebrow="How it works"
+                    title="A simple burn system inspired by efficient rocket stoves"
+                    body="Tinder Stove is built to keep fire practical, portable, and materially honest. The shape encourages airflow from below, helping fuel burn hot and focused while the included starters get things going fast."
+                  />
+
+                  <div className="grid gap-5 sm:grid-cols-3">
+                    {steps.map((step, index) => (
+                      <div key={step.title} className="rounded-3xl border border-pine/10 bg-white/70 p-6 shadow-sm">
+                        <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-full bg-sand text-lg font-bold text-ember">
+                          {index + 1}
+                        </div>
+                        <h3 className="text-lg font-semibold text-pine">{step.title}</h3>
+                        <p className="mt-3 text-sm leading-6 text-pine/70">{step.text}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </section>
+
+              <section className="mx-auto max-w-7xl px-6 py-20 sm:px-8 lg:px-10">
+                <div className="grid gap-10 rounded-[2rem] border border-pine/10 bg-pine px-6 py-10 text-white shadow-xl sm:px-8 lg:grid-cols-[1fr_1fr] lg:px-12">
+                  <div>
+                    <p className="text-sm font-semibold uppercase tracking-[0.25em] text-amber-300">Leave no trace</p>
+                    <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">A stove that respects the place you use it.</h2>
+                  </div>
+                  <div className="space-y-5 text-white/80 leading-7">
+                    <p>
+                      Most campfire gear sticks around forever, even after it stops being useful. Tinder Stove takes a different route: build from renewable fibers, perform well, and reduce what gets left behind.
+                    </p>
+                    <p>
+                      Bamboo brings lightness and structure. Pineapple skin weave adds reinforcement from agricultural byproduct. The result is a fire tool that feels handmade, practical, and aligned with a lighter footprint.
+                    </p>
+                  </div>
+                </div>
+              </section>
+
+              <section className="mx-auto max-w-7xl px-6 py-20 sm:px-8 lg:px-10">
+                <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+                  <SectionTitle
+                    eyebrow="What's in the kit"
+                    title="Everything you need to get the first flame going"
+                    body="Each Tinder Stove kit is packaged to feel tactile, giftable, and trail-ready — no overbuilt case, no plastic-heavy extras, just the essentials."
+                  />
+
+                  <div className="grid gap-5 sm:grid-cols-2">
+                    {kitItems.map((item) => (
+                      <div key={item.name} className="rounded-3xl border border-pine/10 bg-white/75 p-6 shadow-sm backdrop-blur">
+                        <h3 className="text-lg font-semibold text-pine">{item.name}</h3>
+                        <p className="mt-3 text-sm leading-6 text-pine/70">{item.desc}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </section>
+
+              <section id="preorder" className="mx-auto max-w-7xl px-6 py-20 sm:px-8 lg:px-10">
+                <div className="overflow-hidden rounded-[2rem] border border-amber-700/15 bg-gradient-to-br from-amber-50 via-white to-green-50 shadow-xl">
+                  <div className="grid gap-10 px-6 py-10 sm:px-8 lg:grid-cols-[1.1fr_0.9fr] lg:px-12 lg:py-14">
+                    <div>
+                      <p className="text-sm font-semibold uppercase tracking-[0.25em] text-ember">Pre-order now</p>
+                      <h2 className="mt-4 text-3xl font-bold tracking-tight text-pine sm:text-4xl">Bring a cleaner, simpler fire kit to your next trip.</h2>
+                      <p className="mt-5 max-w-2xl text-base leading-7 text-pine/75 sm:text-lg">
+                        Perfect for campers, makers, eco-conscious gift buyers, and anyone who wants a functional conversation piece that burns with purpose.
+                      </p>
+
+                      <div className="mt-8 flex flex-wrap gap-4">
+                        <a
+                          href="mailto:hello@tinderstove.com?subject=Pre-order%20Tinder%20Stove"
+                          className="inline-flex items-center justify-center rounded-full bg-pine px-6 py-3 text-base font-semibold text-white transition hover:bg-moss"
+                        >
+                          Email to pre-order
+                        </a>
+                        <a
+                          href="mailto:hello@tinderstove.com?subject=Tinder%20Stove%20Wholesale%20Inquiry"
+                          className="inline-flex items-center justify-center rounded-full border border-pine/15 bg-white px-6 py-3 text-base font-semibold text-pine transition hover:bg-sand"
+                        >
+                          Ask about wholesale
+                        </a>
+                      </div>
+                    </div>
+
+                    <div className="rounded-[1.75rem] border border-pine/10 bg-white/85 p-6 shadow-sm">
+                      <h3 className="text-xl font-semibold text-pine">Contact & pre-order info</h3>
+                      <div className="mt-6 space-y-4 text-sm leading-6 text-pine/75">
+                        <p><span className="font-semibold text-pine">Email:</span> hello@tinderstove.com</p>
+                        <p><span className="font-semibold text-pine">Launch:</span> Small-batch pre-orders now open</p>
+                        <p><span className="font-semibold text-pine">Best for:</span> Camping kits, outdoor gifts, emergency cook setups, eco-focused retail</p>
+                      </div>
+                      <div className="mt-8 rounded-2xl bg-sand p-5">
+                        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-clay">Tagline</p>
+                        <p className="mt-2 text-lg font-semibold text-pine">Burn bright. Carry light. Leave less behind.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </main>
+
+            <footer className="mx-auto max-w-7xl px-6 pb-12 pt-6 text-sm text-pine/60 sm:px-8 lg:px-10">
+              <div className="flex flex-col gap-3 border-t border-pine/10 pt-6 sm:flex-row sm:items-center sm:justify-between">
+                <p>© 2026 Tinder Stove. Natural fire kit concept landing page.</p>
+                <a href="mailto:hello@tinderstove.com" className="font-medium text-ember hover:text-amber-700">
+                  hello@tinderstove.com
+                </a>
+              </div>
+            </footer>
+          </div>
+        );
+      };
+
+      ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+    </script>
+  </body>
+</html>
