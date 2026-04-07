@@ -75,34 +75,34 @@
 
       const highlights = [
         {
-          title: 'Cinematic first impression',
-          text: 'Built for a premium launch page with a full-screen hero video showing spark, flame, and atmosphere.'
+          title: 'Video-first landing moment',
+          text: 'The page now opens with a pure cinematic hero so the first impression is all spark, flame, motion, and atmosphere.'
         },
         {
-          title: 'Portable fire-starting kit',
-          text: 'A simple concept for campers, outdoor gatherings, backyard moments, and small-batch product launches.'
+          title: 'Built to explain as you scroll',
+          text: 'Only after the hero do visitors land on the story: how it works, what it includes, and why it matters.'
         },
         {
-          title: 'Details still evolving',
-          text: 'Copy is intentionally flexible so the page can sharpen as you finalize the exact product specs and launch offer.'
+          title: 'Launch-ready but flexible',
+          text: 'The structure is strong enough to launch now while still leaving room to refine product specs and messaging.'
         }
       ];
 
       const steps = [
         {
           number: '01',
-          title: 'Set the kit in place',
-          text: 'Position the stove, prep the starter materials, and get ready for a clean, intentional ignition ritual.'
+          title: 'Reinforced by pineapple skin',
+          text: 'The pineapple skin weave helps strengthen the stove body and extend its usable life, giving the concept more durability than a one-burn novelty.'
         },
         {
           number: '02',
-          title: 'Strike the spark',
-          text: 'The hero moment: ignition begins with a spark, a small flame catches, and the stove comes alive.'
+          title: 'Made to keep cooking',
+          text: 'The goal is not just a single ignition moment — it is a stove designed to stay useful long enough to cook up to three full-course meals.'
         },
         {
           number: '03',
-          title: 'Build the burn',
-          text: 'Once lit, the system is meant to feel straightforward, tactile, and satisfying — more ritual than hassle.'
+          title: 'Simple fire, practical outcome',
+          text: 'Once lit, the experience should feel intuitive and satisfying: spark the flame, feed the burn, and use it for real outdoor cooking.'
         }
       ];
 
@@ -150,30 +150,6 @@
       const App = () => {
         return (
           <div className="min-h-screen bg-pine text-ash">
-            <header className="absolute inset-x-0 top-0 z-30">
-              <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 sm:px-8 lg:px-10">
-                <div>
-                  <p className="text-lg font-semibold tracking-[0.04em] text-white">Tinder Stove</p>
-                  <p className="text-xs uppercase tracking-[0.25em] text-white/55">Outdoor fire concept</p>
-                </div>
-
-                <nav className="hidden items-center gap-7 lg:flex">
-                  {navLinks.map((link) => (
-                    <a key={link.href} href={link.href} className="text-sm font-medium text-white/78 transition hover:text-white">
-                      {link.label}
-                    </a>
-                  ))}
-                </nav>
-
-                <a
-                  href="#order"
-                  className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/20"
-                >
-                  Order interest
-                </a>
-              </div>
-            </header>
-
             <main>
               <section className="relative isolate min-h-screen overflow-hidden grain">
                 <div className="absolute inset-0 bg-black">
@@ -192,33 +168,13 @@
                 <div className="absolute inset-0 bg-heroOverlay"></div>
                 <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-pine to-transparent"></div>
 
-                <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl items-end px-6 pb-16 pt-28 sm:px-8 sm:pb-20 lg:px-10 lg:pb-24">
-                  <div className="max-w-4xl">
-                    <p className="text-sm font-semibold uppercase tracking-[0.35em] text-stone/85">Cinematic product concept</p>
-                    <h1 className="mt-5 max-w-4xl text-5xl font-black tracking-tight text-white sm:text-6xl lg:text-7xl xl:text-[5.4rem] xl:leading-[0.96]">
-                      Fire, simplified.
-                      <span className="mt-3 block text-stone">A more intentional way to begin the flame.</span>
-                    </h1>
-                    <p className="mt-6 max-w-2xl text-lg leading-8 text-white/78 sm:text-xl">
-                      Tinder Stove is evolving into a premium outdoor product page built around spark, ritual, portability, and a lighter footprint. The exact details are still taking shape — the experience is not.
-                    </p>
-
-                    <div className="mt-9 flex flex-col gap-4 sm:flex-row">
-                      <a
-                        href="#order"
-                        className="inline-flex items-center justify-center rounded-full bg-ember px-7 py-3.5 text-base font-semibold text-white shadow-glow transition hover:bg-glow"
-                      >
-                        Join the first release
-                      </a>
-                      <a
-                        href="#how-it-works"
-                        className="inline-flex items-center justify-center rounded-full border border-white/22 bg-white/10 px-7 py-3.5 text-base font-semibold text-white backdrop-blur transition hover:bg-white/18"
-                      >
-                        Explore the concept
-                      </a>
-                    </div>
-                  </div>
-                </div>
+                <a
+                  href="#how-it-works"
+                  aria-label="Scroll to how it works"
+                  className="absolute bottom-8 left-1/2 z-20 inline-flex -translate-x-1/2 items-center justify-center rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-white/85 backdrop-blur transition hover:bg-white/20"
+                >
+                  Scroll
+                </a>
               </section>
 
               <section className="border-t border-white/5 bg-[#101712] py-16 sm:py-20">
@@ -239,8 +195,8 @@
                   <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
                     <SectionHeading
                       eyebrow="How it works"
-                      title="A product story built around spark, flame, and ease"
-                      body="The goal is to make the experience feel premium and understandable at the same time: simple setup, a satisfying ignition moment, and a product that feels made for outdoor ritual rather than clutter."
+                      title="How it works"
+                      body="Tinder Stove is designed to pair a clean ignition ritual with practical cooking use. The pineapple skin weave helps reinforce the stove for longer use, with the goal of giving you enough life out of one stove to cook up to three full-course meals."
                     />
 
                     <div className="grid gap-5">
